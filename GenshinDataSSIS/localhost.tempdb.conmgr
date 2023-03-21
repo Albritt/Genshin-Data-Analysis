@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.tempdb"
+  DTS:DTSID="{DF45EA3C-A17F-477C-A5CA-4DA79AC59A29}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=PortfolioProject;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-GenshinDataSSIS-{DF45EA3C-A17F-477C-A5CA-4DA79AC59A29}localhost.tempdb;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

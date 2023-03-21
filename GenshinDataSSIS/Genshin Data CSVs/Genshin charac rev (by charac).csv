@@ -1,0 +1,51 @@
+version,version_name,start_date,end_date,5_star_characters,rerun,revenue,banner_days,avg_revenue
+1,Welcome to Tevyat,25/09/2020,19/10/2020,Venti,0,30632752,25,1225310.08
+1,Welcome to Tevyat,20/10/2020,10/11/2020,Klee,0,22750080,22,1034094.55
+1.1,A New Star Approaches,11/11/2020,30/11/2020,Tartaglia,0,13443619,20,672180.95
+1.1,A New Star Approaches,1/12/2020,22/12/2020,Zhongli,0,16264892,22,739313.27
+1.2,The Chalk Prince and the Dragon,23/12/2020,12/1/2021,Albedo,0,11816107,21,562671.76
+1.2,The Chalk Prince and the Dragon,13/01/2021,2/2/2021,Ganyu,0,15669918,21,746186.57
+1.3,All That Glitters,3/2/2021,17/02/2021,Xiao,0,13145115,15,876341
+1.3,All That Glitters,18/02/2021,2/3/2021,Keqing,0,9505798,13,731215.23
+1.3,All That Glitters,3/3/2021,16/03/2021,Hutao,0,12481634,14,891545.29
+1.4,Invitation to Windblume,17/03/2021,6/4/2021,Venti,1,16614209,21,791152.81
+1.4,Invitation to Windblume,7/4/2021,27/04/2021,Tartaglia,1,6965445,21,331687.86
+1.5,Beneath the Light of Jadeite,28/04/2021,18/05/2021,Zhongli,1,10215165,21,486436.43
+1.5,Beneath the Light of Jadeite,19/05/2021,8/6/2021,Eula,0,12619390,21,600923.33
+1.6,Midsummer Island Adventure,9/6/2021,29/06/2021,Klee,1,7006180,21,333627.62
+1.6,Midsummer Island Adventure,30/06/2021,20/07/2021,Kazuha,0,9807112,21,467005.33
+2,Immovable God and the Eternal Euthymia,21/07/2021,10/8/2021,Ayaka,0,16451006,21,783381.24
+2,Immovable God and the Eternal Euthymia,11/8/2021,31/08/2021,Yoimiya,0,8615144,21,410244.95
+2.1,Floating World Under the Moonlight,1/9/2021,20/09/2021,Raiden Shogun,0,33020905,20,1651045.25
+2.1,Floating World Under the Moonlight,21/09/2021,12/10/2021,Kokomi,0,7020975,22,319135.23
+2.2,Into the Perilous Labyrinth of Fog,13/10/2021,2/11/2021,Tartaglia,2,7785438,21,370735.14
+2.2,Into the Perilous Labyrinth of Fog,2/11/2021,23/11/2021,Hutao,1,25226952,22,1146679.64
+2.3,Shadows Amidst Snowstorms,24/11/2021,14/12/2021,Albedo,1,17026066,21,810765.05
+2.3,Shadows Amidst Snowstorms,24/11/2021,14/12/2021,Eula,1,17026066,21,810765.05
+2.3,Shadows Amidst Snowstorms,14/12/2021,4/1/2022,Arataki Itto,0,13404072,22,609276
+2.4,Fleeting Colors in Flight,5/1/2022,25/01/2022,Shenhe ,0,16994406,21,809257.43
+2.4,Fleeting Colors in Flight,5/1/2022,25/01/2022,Xiao,1,16994406,21,809257.43
+2.4,Fleeting Colors in Flight,25/01/2022,15/02/2022,Zhongli,2,26780298,22,1217286.27
+2.4,Fleeting Colors in Flight,25/01/2022,15/02/2022,Ganyu,1,26780298,22,1217286.27
+2.5,When the Sakura Bloom,16/02/2022,8/3/2022,Yae Miko,0,15110264,21,719536.38
+2.5,When the Sakura Bloom,8/3/2022,29/03/2022,Raiden Shogun,1,33560259,22,1525466.32
+2.5,When the Sakura Bloom,8/3/2022,29/03/2022,Kokomi,1,33560259,22,1525466.32
+2.6,Zephyr of the Violet Garden,30/03/2022,19/04/2022,Ayato,0,22767455,21,1084164.52
+2.6,Zephyr of the Violet Garden,30/03/2022,19/04/2022,Venti,2,22767455,21,1084164.52
+2.6,Zephyr of the Violet Garden,19/04/2022,31/05/2022,Ayaka,1,35939066,43,835792.23
+2.7,Hidden Dreams in the Depths,31/05/2022,21/06/2022,Yelan ,0,25612693,22,1164213.32
+2.7,Hidden Dreams in the Depths,31/05/2022,21/06/2022,Xiao,2,25612693,22,1164213.32
+2.7,Hidden Dreams in the Depths,21/06/2022,12/7/2022,Arataki Itto,1,12586764,22,572125.64
+2.8,Summer Fantasia,13/07/2022,2/8/2022,Kazuha,1,24808479,21,1181356.14
+2.8,Summer Fantasia,13/07/2022,2/8/2022,Klee,2,24808479,21,1181356.14
+2.8,Summer Fantasia,2/8/2022,23/08/2022,Yoimiya,1,14333266,22,651512.09
+3,The Morn a Thousand Roses Brings,23/08/2022,9/9/2022,Tighnari,0,19068372,18,1059354
+3,The Morn a Thousand Roses Brings,23/08/2022,9/9/2022,Zhongli,3,19068372,18,1059354
+3,The Morn a Thousand Roses Brings,9/9/2022,27/09/2022,Ganyu,2,15681840,19,825360
+3,The Morn a Thousand Roses Brings,9/9/2022,27/09/2022,Kokomi,2,15681840,19,825360
+3.1,King Deshret and the Three Magi,27/09/2022,14/10/2022,Cyno,0,19052023,18,1058445.72
+3.1,King Deshret and the Three Magi,27/09/2022,14/10/2022,Venti,3,19052023,18,1058445.72
+3.1,King Deshret and the Three Magi,14/10/2022,1/11/2022,Nilou,0,15731680,19,827983.16
+3.1,King Deshret and the Three Magi,14/10/2022,1/11/2022,Albedo,2,15731680,19,827983.16
+3.2,Akasha Pulses the Kalpa Flame Rises,1/11/2022,15/11/2022,Nahida,0,32101943,15,2140129.53
+3.2,Akasha Pulses the Kalpa Flame Rises,1/11/2022,15/11/2022,Yoimiya,2,32101943,15,2140129.53

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="YearByYearRevenue">
+    <Query>
+      <DataSourceReference>GenshinDataDB</DataSourceReference>
+      <CommandText>SELECT
+	YEAR(start_date) as banner_year,
+	SUM(revenue) as revenue_this_year,
+	LAG(SUM(revenue)) OVER (ORDER BY(YEAR(start_date))) AS revenue_last_year
+	FROM dbo.GenshinRevenueTable
+	GROUP BY YEAR(start_date)</CommandText>
+    </Query>
+  </DataSet>
+</SharedDataSet>
