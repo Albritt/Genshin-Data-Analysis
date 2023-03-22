@@ -18,8 +18,8 @@
     <FullPath>DebugLocal</FullPath>
     <OutputPath>bin\DebugLocal</OutputPath>
     <ErrorLevel>2</ErrorLevel>
-    <OverwriteDatasets>False</OverwriteDatasets>
-    <OverwriteDataSources>False</OverwriteDataSources>
+    <OverwriteDatasets>True</OverwriteDatasets>
+    <OverwriteDataSources>True</OverwriteDataSources>
     <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
     <TargetReportFolder>GenshinDataSSRS</TargetReportFolder>
@@ -56,6 +56,7 @@
     <DataSource Include="GenshinDataDB.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="CharacterModelReport.rdl" />
     <Report Include="CharacterPopularityReport.rdl" />
     <Report Include="RevenueTrendReport.rdl" />
   </ItemGroup>

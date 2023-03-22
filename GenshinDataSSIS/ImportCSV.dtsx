@@ -11,11 +11,55 @@
   DTS:LocaleID="1041"
   DTS:ObjectName="ImportCSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{21D74BE1-6857-4589-9A43-1464F212FF3C}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{2D9C0BFB-30D1-4AD3-BBDE-0B13103BFCC5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Character Data CSV Error Log]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Outputs all error files to a text file for logging"
+      DTS:DTSID="{1FED6230-8D4C-411B-A022-F7198B50FEC7}"
+      DTS:ObjectName="Character Data CSV Error Log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\minz\Source\Repos\GenshinDataSSIS\GenshinDataSSIS\Error Log\CharacterDataCSVErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat File Source Error Output Column"
+              DTS:DTSID="{4650DC8A-E335-4BC5-A74D-E8AA73AC84D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{DE0C20E1-D731-4DE7-BF18-C2D6EA1638AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{37F1BBBA-9CC1-408A-959B-38B21F6E0152}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CharacterData CSV]"
       DTS:CreationName="FLATFILE"
@@ -639,10 +683,10 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Error LogANSI]"
+      DTS:refId="Package.ConnectionManagers[Error Log Stats CSV Errors]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{C354AB43-2DDB-4EFB-982C-5AE6D351EA9F}"
-      DTS:ObjectName="Error LogANSI">
+      DTS:ObjectName="Error Log Stats CSV Errors">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -659,7 +703,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Flat File Source Error Output Column"
-              DTS:DTSID="{690AF4EF-294E-496B-A75A-9A458615D78E}"
+              DTS:DTSID="{840E4384-7951-4798-89DB-9A4788EEDA4D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -667,7 +711,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{C510EA0B-6730-4105-B4F7-B35C9BCC7469}"
+              DTS:DTSID="{8105668D-0D74-4ECD-8053-8E990E5F27BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -675,51 +719,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{7468DFCE-0724-4DE6-A165-EB4436552987}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[ErrorLogUTF8]"
-      DTS:CreationName="FLATFILE"
-      DTS:Description="Outputs all error files to a text file for logging"
-      DTS:DTSID="{1FED6230-8D4C-411B-A022-F7198B50FEC7}"
-      DTS:ObjectName="ErrorLogUTF8">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\minz\Source\Repos\GenshinDataSSIS\GenshinDataSSIS\Error Log\CharacterDataCSVErrorLog.txt">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="302"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Flat File Source Error Output Column"
-              DTS:DTSID="{B8F9B152-C0A8-493C-BA15-708AB278DA96}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{54CC8CB7-68A4-4F8F-94FF-74B12EBDD028}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{377230E9-4DFD-41C6-9F5C-2D5D18C08095}"
+              DTS:DTSID="{DFD26F21-1EF7-453D-AEAB-C7B33C1363FB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1181,7 +1181,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Flat File Source Error Output Column"
-              DTS:DTSID="{BE98ADBD-7F56-4AFF-89C1-70502E35146C}"
+              DTS:DTSID="{A3D322F0-48B9-4262-B454-3E45F8D25166}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1189,7 +1189,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{8CEAB944-5AB5-4426-8F62-5108BB5A2B8B}"
+              DTS:DTSID="{F949CC21-AADF-4743-8AC4-AD44015BF3AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1197,7 +1197,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{86D15266-2DFD-4202-AEA5-BFA7A0C8B9EC}"
+              DTS:DTSID="{4E666AC4-0A7F-4D9E-9481-E739EB6444CD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -4333,9 +4333,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Importing CSV Files\GenshinRevenueTable.Inputs[OLE DB Destination Input].ExternalColumns[version]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       name="version" />
                     <externalMetadataColumn
                       refId="Package\Importing CSV Files\GenshinRevenueTable.Inputs[OLE DB Destination Input].ExternalColumns[version_name]"
@@ -4402,156 +4400,6 @@
                   <externalMetadataColumns />
                 </output>
               </outputs>
-            </component>
-            <component
-              refId="Package\Importing CSV Files\Log Revenue CSV Errors"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="1033"
-              name="Log Revenue CSV Errors"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Importing CSV Files\Log Revenue CSV Errors.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[RevenueCSVErrorLog]"
-                  connectionManagerRefId="Package.ConnectionManagers[RevenueCSVErrorLog]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
-                      cachedCodepage="1252"
-                      cachedDataType="text"
-                      cachedName="Flat File Source Error Output Column"
-                      externalMetadataColumnId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                      lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
-                    <inputColumn
-                      refId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                      codePage="1252"
-                      dataType="text"
-                      name="Flat File Source Error Output Column" />
-                    <externalMetadataColumn
-                      refId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Importing CSV Files\Log Stats CSV Errors"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="1033"
-              name="Log Stats CSV Errors"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Importing CSV Files\Log Stats CSV Errors.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Error LogANSI]"
-                  connectionManagerRefId="Package.ConnectionManagers[Error LogANSI]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
-                      cachedCodepage="1252"
-                      cachedDataType="text"
-                      cachedName="Flat File Source Error Output Column"
-                      externalMetadataColumnId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                      lineageId="Package\Importing CSV Files\Stats CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
-                    <inputColumn
-                      refId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Importing CSV Files\Stats CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Importing CSV Files\Stats CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                      codePage="1252"
-                      dataType="text"
-                      name="Flat File Source Error Output Column" />
-                    <externalMetadataColumn
-                      refId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
             </component>
             <component
               refId="Package\Importing CSV Files\Merge Join"
@@ -6278,12 +6126,12 @@
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[version]"
                       length="50"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[version]"
                       name="version"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6300,12 +6148,12 @@
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[version_name]"
                       length="38"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[version_name]"
                       name="version_name"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6321,11 +6169,11 @@
                       refId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[start_date]"
                       dataType="date"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[start_date]"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[start_date]"
                       name="start_date"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6341,11 +6189,11 @@
                       refId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[end_date]"
                       dataType="date"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[end_date]"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[end_date]"
                       name="end_date"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6362,12 +6210,12 @@
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[5_star_characters]"
                       length="13"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[5_star_characters]"
                       name="5_star_characters"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6383,11 +6231,11 @@
                       refId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[rerun]"
                       dataType="i1"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[rerun]"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[rerun]"
                       name="rerun"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6403,11 +6251,11 @@
                       refId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[revenue]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[revenue]"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[revenue]"
                       name="revenue"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6423,11 +6271,11 @@
                       refId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[banner_days]"
                       dataType="i1"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[banner_days]"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[banner_days]"
                       name="banner_days"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -6443,11 +6291,11 @@
                       refId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[avg_revenue]"
                       dataType="r4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].ExternalColumns[avg_revenue]"
                       lineageId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Output].Columns[avg_revenue]"
                       name="avg_revenue"
-                      truncationRowDisposition="RedirectRow">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -9508,16 +9356,6 @@
           </components>
           <paths>
             <path
-              refId="Package\Importing CSV Files.Paths[Flat File Source Error Output]"
-              endId="Package\Importing CSV Files\Log Stats CSV Errors.Inputs[Flat File Destination Input]"
-              name="Flat File Source Error Output"
-              startId="Package\Importing CSV Files\Stats CSV.Outputs[Flat File Source Error Output]" />
-            <path
-              refId="Package\Importing CSV Files.Paths[Flat File Source Error Output1]"
-              endId="Package\Importing CSV Files\Log Revenue CSV Errors.Inputs[Flat File Destination Input]"
-              name="Flat File Source Error Output"
-              startId="Package\Importing CSV Files\Revenue CSV.Outputs[Flat File Source Error Output]" />
-            <path
               refId="Package\Importing CSV Files.Paths[Flat File Source Output]"
               endId="Package\Importing CSV Files\SortStatsByCharacterName.Inputs[Sort Input]"
               name="Flat File Source Output"
@@ -9628,11 +9466,7 @@
     design-time-name="Package\Importing CSV Files">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="203,42"
-          Id="Package\Importing CSV Files\Log Revenue CSV Errors"
-          TopLeft="138,70" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="192,42"
           Id="Package\Importing CSV Files\GenshinRevenueTable"
@@ -9649,10 +9483,6 @@
           Size="214,42"
           Id="Package\Importing CSV Files\GenshinCharacterInfoTable"
           TopLeft="1125,317.714285714286" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Importing CSV Files\Log Stats CSV Errors"
-          TopLeft="146.666666666667,231.111111111111" />
         <NodeLayout
           Size="215,42"
           Id="Package\Importing CSV Files\SortStatsByCharacterName"
@@ -9673,6 +9503,40 @@
           Size="173,42"
           Id="Package\Importing CSV Files\CharacterDataCSV"
           TopLeft="128,428" />
+        <EdgeLayout
+          Id="Package\Importing CSV Files.Paths[Flat File Source Output2]"
+          TopLeft="284.5,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="660.5,15.5"
+              Start="0,0"
+              End="653,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="326.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="326.25,0"
+                    Point2="330.25,0"
+                    Point3="330.25,4" />
+                  <mssgle:LineSegment
+                    End="330.25,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="330.25,11.5"
+                    Point2="330.25,15.5"
+                    Point3="334.25,15.5" />
+                  <mssgle:LineSegment
+                    End="653,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Importing CSV Files.Paths[Flat File Source Output1]"
           TopLeft="301,448">
@@ -9715,78 +9579,6 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Importing CSV Files.Paths[Flat File Source Error Output1]"
-          TopLeft="210,137.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29.5,-25.5"
-              Start="0,0"
-              End="29.5,-18">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-8.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-8.75"
-                    Point2="0,-12.75"
-                    Point3="4,-12.75" />
-                  <mssgle:LineSegment
-                    End="25.5,-12.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.5,-12.75"
-                    Point2="29.5,-12.75"
-                    Point3="29.5,-16.75" />
-                  <mssgle:LineSegment
-                    End="29.5,-18" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.87638671875,-7.75,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Importing CSV Files.Paths[Flat File Source Error Output]"
-          TopLeft="143,308">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="3.666666666667,-55.888888888889"
-              Start="0,0"
-              End="-3.833333333333,-55.888888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.5,0"
-                    Point2="-22.5,0"
-                    Point3="-22.5,-4" />
-                  <mssgle:LineSegment
-                    End="-22.5,-51.888888888889" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.5,-51.888888888889"
-                    Point2="-22.5,-55.888888888889"
-                    Point3="-18.5,-55.888888888889" />
-                  <mssgle:LineSegment
-                    End="-3.833333333333,-55.888888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-86.12638671875,1,127.2527734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9883,40 +9675,6 @@
                     Point3="122,-35.285714285714" />
                   <mssgle:LineSegment
                     End="228.5,-35.285714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Importing CSV Files.Paths[Flat File Source Output2]"
-          TopLeft="284.5,158.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="660.5,15.5"
-              Start="0,0"
-              End="653,15.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="326.25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="326.25,0"
-                    Point2="330.25,0"
-                    Point3="330.25,4" />
-                  <mssgle:LineSegment
-                    End="330.25,11.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="330.25,11.5"
-                    Point2="330.25,15.5"
-                    Point3="334.25,15.5" />
-                  <mssgle:LineSegment
-                    End="653,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

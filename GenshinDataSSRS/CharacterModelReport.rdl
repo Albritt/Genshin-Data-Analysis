@@ -9,31 +9,36 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.5.33424.131</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2023-03-21T20:59:14.1193609Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2023-03-21T22:39:58.9610026Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSource1">
+    <DataSource Name="GenshinDataDB">
       <DataSourceReference>GenshinDataDB</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>61cbd466-f7e7-41ac-9d10-d811e47ec9ca</rd:DataSourceID>
+      <rd:DataSourceID>7dddf2c6-302e-4242-9daf-c93a1b30eec1</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="CharacterPopularity">
+    <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT        GRT.[5_star_characters], SUM(GRT.avg_revenue) / (CASE WHEN MAX(rerun) = 0 THEN 1 ELSE MAX(rerun) + 1 END) AS total_revenue
-FROM            GenshinRevenueTable AS GRT LEFT OUTER JOIN
-                         GenshinCharacterInfoTable AS GCIT ON GRT.[5_star_characters] = GCIT.character_name
-WHERE        (GRT.version &lt; 3) AND (GCIT.playable = 'Y')
-GROUP BY GRT.[5_star_characters]
-ORDER BY total_revenue DESC</CommandText>
+        <DataSourceName>GenshinDataDB</DataSourceName>
+        <CommandText>SELECT
+	GCIT.model,
+	SUM(GRT.avg_revenue)/
+	(CASE 
+		WHEN MAX(GRT.rerun) = 0 THEN 1
+		ELSE MAX(GRT.rerun) + 1 
+		END) as total_revenue
+	FROM dbo.GenshinRevenueTable as GRT
+	LEFT JOIN dbo.GenshinCharacterInfoTable as GCIT on GRT."5_star_characters" = GCIT.character_name
+	WHERE GCIT.playable = 'Y'
+	GROUP BY GCIT.model</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID5_star_characters">
-          <DataField>5_star_characters</DataField>
+        <Field Name="model">
+          <DataField>model</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="total_revenue">
@@ -47,21 +52,22 @@ ORDER BY total_revenue DESC</CommandText>
     <ReportSection>
       <Body>
         <ReportItems>
-          <Chart Name="Chart7">
+          <Chart Name="Chart1">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart7_CategoryGroup1">
+                  <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!ID5_star_characters.Value</GroupExpression>
+                      <GroupExpression>=Fields!model.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!total_revenue.Value</Value>
+                      <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!ID5_star_characters.Value</Label>
+                  <Label>=Fields!model.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -82,20 +88,14 @@ ORDER BY total_revenue DESC</CommandText>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
-                        <UseValueAsLabel>true</UseValueAsLabel>
                       </ChartDataLabel>
-                      <Style>
-                        <Color>DarkOrange</Color>
-                        <BackgroundGradientType>None</BackgroundGradientType>
-                        <BackgroundHatchType>None</BackgroundHatchType>
-                      </Style>
+                      <Style />
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Type>Bar</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -128,15 +128,14 @@ ORDER BY total_revenue DESC</CommandText>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption>Characters</Caption>
+                      <Caption>Models</Caption>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
-                    <Interval>1</Interval>
                     <ChartMajorGridLines>
-                      <Enabled>True</Enabled>
+                      <Enabled>False</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -144,7 +143,6 @@ ORDER BY total_revenue DESC</CommandText>
                       </Style>
                     </ChartMajorGridLines>
                     <ChartMinorGridLines>
-                      <Enabled>False</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -171,6 +169,8 @@ ORDER BY total_revenue DESC</CommandText>
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <PreventLabelOffset>true</PreventLabelOffset>
+                    <PreventWordWrap>true</PreventWordWrap>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -240,10 +240,11 @@ ORDER BY total_revenue DESC</CommandText>
                         <Style>None</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
+                      <Format>#,0.00;(#,0.00)</Format>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption>Revenue Generated (Millions)</Caption>
+                      <Caption>Revenue</Caption>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
@@ -349,7 +350,21 @@ ORDER BY total_revenue DESC</CommandText>
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <Palette>BrightPastel</Palette>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Revenue By Character Model</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextAlign>Left</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <Color>#a6a6a6</Color>
+                </Style>
+                <Position>TopLeft</Position>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>Pastel</Palette>
             <ChartBorderSkin>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
@@ -366,24 +381,23 @@ ORDER BY total_revenue DESC</CommandText>
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>CharacterPopularity</DataSetName>
-            <Height>4.43625in</Height>
-            <Width>8.05208in</Width>
+            <DataSetName>DataSet1</DataSetName>
+            <Height>3.8125in</Height>
+            <Width>6.07292in</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
-              <BackgroundColor>LightGrey</BackgroundColor>
-              <BackgroundGradientType>LeftRight</BackgroundGradientType>
-              <BackgroundHatchType>None</BackgroundHatchType>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.43625in</Height>
+        <Height>3.8125in</Height>
         <Style />
       </Body>
-      <Width>8.79167in</Width>
+      <Width>6.48958in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -400,5 +414,5 @@ ORDER BY total_revenue DESC</CommandText>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>01b2bcb6-187c-4b50-93a0-3fbb15c7c75c</rd:ReportID>
+  <rd:ReportID>869427ad-b597-4abe-8910-19045fa379e0</rd:ReportID>
 </Report>
