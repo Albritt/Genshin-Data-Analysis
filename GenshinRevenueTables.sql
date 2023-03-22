@@ -102,8 +102,6 @@ SELECT
 	FROM dbo.GenshinRevenueTable
 	GROUP BY YEAR(start_date)
 
---Was version 1 (Mondstadt/Liyue) or version 2 (Inazuma) more successful?
-
 
 
 
