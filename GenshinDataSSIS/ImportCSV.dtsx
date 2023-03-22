@@ -11,8 +11,8 @@
   DTS:LocaleID="1041"
   DTS:ObjectName="ImportCSV"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{2D9C0BFB-30D1-4AD3-BBDE-0B13103BFCC5}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{FC10DF7D-BD98-429C-B9CD-447611A1DD51}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3122,52 +3122,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Importing CSV Files\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Importing CSV Files\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Importing CSV Files\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Importing CSV Files\Data Conversion.Inputs[Data Conversion Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Importing CSV Files\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Importing CSV Files\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Importing CSV Files\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Importing CSV Files\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Importing CSV Files\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Importing CSV Files\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Importing CSV Files\GenshinCharacterInfoTable"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -3831,7 +3785,7 @@
                       refId="Package\Importing CSV Files\GenshinCharacterInfoTable.Inputs[OLE DB Destination Input].ExternalColumns[character_name]"
                       codePage="65001"
                       dataType="str"
-                      length="9"
+                      length="18"
                       name="character_name" />
                     <externalMetadataColumn
                       refId="Package\Importing CSV Files\GenshinCharacterInfoTable.Inputs[OLE DB Destination Input].ExternalColumns[playable]"
@@ -9472,14 +9426,6 @@
           Id="Package\Importing CSV Files\GenshinRevenueTable"
           TopLeft="945,153" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Importing CSV Files\Stats CSV"
-          TopLeft="143,287" />
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Importing CSV Files\Revenue CSV"
-          TopLeft="135.5,137.5" />
-        <NodeLayout
           Size="214,42"
           Id="Package\Importing CSV Files\GenshinCharacterInfoTable"
           TopLeft="1125,317.714285714286" />
@@ -9495,14 +9441,6 @@
           Size="261,42"
           Id="Package\Importing CSV Files\SortCharacterDataByCharacterName"
           TopLeft="433,426" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Importing CSV Files\Data Conversion"
-          TopLeft="995.714285714286,394.285714285714" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Importing CSV Files\CharacterDataCSV"
-          TopLeft="128,428" />
         <EdgeLayout
           Id="Package\Importing CSV Files.Paths[Flat File Source Output2]"
           TopLeft="284.5,158.5">
@@ -9683,6 +9621,18 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Importing CSV Files\CharacterDataCSV"
+          TopLeft="128,428" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Importing CSV Files\Stats CSV"
+          TopLeft="143,287" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Importing CSV Files\Revenue CSV"
+          TopLeft="135.5,137.5" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
